@@ -24,18 +24,18 @@ export class Handler {
       this.game.player.shoot();
     });
     window.addEventListener("touchstart", (e) => {
-      e.preventDefault();
+    
       const touch = e.touches[0];
       this.game.mouse.x = touch.clientX;
       this.game.mouse.y = touch.clientY;
       this.game.player.shoot();
-    }, { passive: false });
+    });
     window.addEventListener("touchmove", (e) => {
-      e.preventDefault();
+     
       const touch = e.touches[0];
       this.game.mouse.x = touch.clientX;
       this.game.mouse.y = touch.clientY;
-    }, { passive: false });
+    });
     window.addEventListener("keyup", (e) => {
       if (e.key === "d") this.game.debug = !this.game.debug;
       else if (e.key === "1") this.game.player.shoot();
